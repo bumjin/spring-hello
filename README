@@ -1,0 +1,3 @@
+http://pookey.co.uk/wordpress/archives/50-getting-started-with-maven-and-spring
+
+ mvn clean compile exec:java
