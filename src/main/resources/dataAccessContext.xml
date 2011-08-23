@@ -3,7 +3,7 @@
    "http://www.springframework.org/dtd/spring-beans.dtd">
 
 <beans>
-	<bean id="dataStuff" class="kr.bumjin.spring.dao.DataStuff">
+	<bean id="dataStuff" class="kr.bumjin.spring.dao.DataDao">
 		<property name="dataSource">
 			<ref local="dataSource"></ref>
 		</property>
@@ -13,7 +13,7 @@
 			<value>oracle.jdbc.driver.OracleDriver</value>
 		</property>
 		<property name="url">
-			<value>jdbc:oracle:thin:@localhost:1521:XE</value>
+			<value>jdbc:oracle:thin:@localhost:1521:ORCL</value>
 		</property>
 		<property name="username">
 			<value>scott</value>
