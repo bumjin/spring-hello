@@ -1,3 +1,8 @@
 http://pookey.co.uk/wordpress/archives/50-getting-started-with-maven-and-spring
 
  mvn clean compile exec:java
+ 
+ 
+ regist oracle jdbc driver to local repo 
+ D:\java\jdbc>mvn install:install-file -Dfile=ojdbc5.jar -DgroupId=com.oracle -Da
+rtifactId=oracle -Dversion=10.2.0.2.0 -Dpackaging=jar -DgeneratePom=true
