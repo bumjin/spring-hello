@@ -1,6 +1,6 @@
 package kr.bumjin.spring;
 
-import kr.bumjin.spring.dao.DataDao;
+import kr.bumjin.spring.dao.DataDaoImpl;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -19,10 +19,8 @@ public class App
 		//hello.greet();
 		
         //BeanFactory factory = new XmlBeanFactory(new ClassPathResource("dataAccessContext.xml") );
-        ApplicationContext context = new ClassPathXmlApplicationContext("dataAccessContext.xml");
-		DataDao stuff = (DataDao) context.getBean("dataStuff");
-		System.out.println(stuff.getNames());
-		System.out.println("OK");
+        /*ApplicationContext context = new ClassPathXmlApplicationContext(new String[]{"application-context.xml","dataAccessContext.xml"});
+		DataDaoImpl stuff = (DataDaoImpl) context.getBean("dataStuff");*/
 		
     	
     	//BeanFactory context = new XmlBeanFactory(new ClassPathResource("application-context.xml") );

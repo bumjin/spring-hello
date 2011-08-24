@@ -1,6 +1,6 @@
 package kr.bumjin.spring;
 
-public class ConfigTest {
+public class Config {
 	private String driverClass;
 	private String url;
 	private String username;

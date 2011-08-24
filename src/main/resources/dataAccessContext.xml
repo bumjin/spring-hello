@@ -3,23 +3,50 @@
    "http://www.springframework.org/dtd/spring-beans.dtd">
 
 <beans>
-	<bean id="dataStuff" class="kr.bumjin.spring.dao.DataDao">
+	<!--<bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location">
+			<value>classpath:jdbc_hsql.properties</value>
+		</property>
+	</bean>
+	--><bean id="dataStuff" class="kr.bumjin.spring.dao.DataDaoImpl">
 		<property name="dataSource">
 			<ref local="dataSource"></ref>
 		</property>
 	</bean>
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName">
-			<value>oracle.jdbc.driver.OracleDriver</value>
+			<value>${jdbc.driver}</value>
 		</property>
 		<property name="url">
-			<value>jdbc:oracle:thin:@localhost:1521:ORCL</value>
+			<value>${jdbc.url}</value>
 		</property>
 		<property name="username">
-			<value>scott</value>
+			<value>${jdbc.username}"</value>
 		</property>
 		<property name="password">
-			<value>tiger</value>
+			<value>${jdbc.password}</value>
+		</property>
+		<!--<property name="defaultAutoCommit">
+			<value>false</value>
+		</property>
+		<property name="defaultReadOnly">
+			<value>false</value>
+		</property>
+       <property name="maxActive">
+			<value>10</value>
+		</property>
+       <property name="maxIdle">
+			<value>30</value>
+		</property>
+       <property name="maxWait">
+			<value>10000</value>
+		</property>
+	--></bean>
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource">
+			<ref local="dataSource" />
 		</property>
 	</bean>
 </beans>
