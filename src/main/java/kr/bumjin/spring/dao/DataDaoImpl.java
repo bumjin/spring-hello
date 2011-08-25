@@ -17,15 +17,7 @@ public class DataDaoImpl extends JdbcDaoSupport implements DataDao{
 	 * @see kr.bumjin.spring.dao.DataDao#getEmps()
 	 */
 	public List getEmps() {
-		return getJdbcTemplate().queryForList("select id, name from emp");
+		return getJdbcTemplate().queryForList("select id, name from employee");
 	}
 
-	public int deleteTable(String table) {
-		// TODO Auto-generated method stub
-		return getJdbcTemplate().update("delete from "+table);
-	}
-	
-	public int insertSample() {
-		return getJdbcTemplate().update("insert into emp values ('111', 'abc')");
-	}
 }

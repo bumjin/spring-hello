@@ -10,7 +10,7 @@
 	<bean
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="location">
-			<value>classpath:jdbc_oracle.properties</value>
+			<value>classpath:jdbc_hsql.properties</value>
 		</property>
 	</bean>
 	<bean id="config" class="kr.bumjin.spring.Config">
