@@ -25,7 +25,6 @@ public class DataDaoTest extends AbstractDependencyInjectionSpringContextTests {
 	public void onSetUp() throws Exception {
 		super.onSetUp();
 		assertNotNull(jdbcTemplate);
-		jdbcTemplate.execute("CREATE USER SA PASSWORD \"\" "); 
 		jdbcTemplate.execute("create table employee (id int, name varchar(30))");
 		jdbcTemplate.execute("insert into employee (id, name) values (1, 'A')");
 		jdbcTemplate.execute("insert into employee (id, name) values (2, 'B')");
