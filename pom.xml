@@ -46,6 +46,16 @@
 			<version>2.2.4</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+            <groupId>org.lazyluke</groupId>
+            <artifactId>log4jdbc-remix</artifactId>
+            <version>0.2.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.6.1</version>
+        </dependency>
 	</dependencies>
 	<build>
 		<plugins>

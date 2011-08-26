@@ -5,6 +5,7 @@ import java.util.Map;
 
 import javax.sql.DataSource;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.AbstractDependencyInjectionSpringContextTests;
 
@@ -14,12 +15,12 @@ public class DataDaoTest extends AbstractDependencyInjectionSpringContextTests {
 
 	private JdbcTemplate jdbcTemplate;
 
-	public void setDataDao(DataDao dataDao) {
-		this.dataDao = dataDao;
+	public void setDataDao(DataDao myDataDao) {
+		this.dataDao = myDataDao;
 	}
 
-	public void setDataSource(DataSource dataSource) {
-		jdbcTemplate = new JdbcTemplate(dataSource);
+	public void setDataSource(@Qualifier("dataSource") final DataSource myDataDao) {
+		jdbcTemplate = new JdbcTemplate(myDataDao);
 	}
 
 	public void onSetUp() throws Exception {
