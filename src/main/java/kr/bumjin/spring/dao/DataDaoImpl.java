@@ -2,6 +2,8 @@ package kr.bumjin.spring.dao;
 
 import java.util.List;
 
+import kr.bumjin.spring.model.Emp;
+
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 
 public class DataDaoImpl extends JdbcDaoSupport implements DataDao{
@@ -18,6 +20,11 @@ public class DataDaoImpl extends JdbcDaoSupport implements DataDao{
 	 */
 	public List getEmps() {
 		return getJdbcTemplate().queryForList("select id, name from employee");
+	}
+
+	public void create(Emp emp) {
+		// TODO Auto-generated method stub
+		getJdbcTemplate().update("insert into employee values (?, ?) ", new Object[]{new Integer(emp.getId()), emp.getName()});
 	}
 
 }

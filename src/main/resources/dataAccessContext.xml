@@ -10,6 +10,7 @@
 		</property>
 	</bean>
 	-->
+	
 	<!-- datasource -->
     <!--<jdbc:embedded-database id="hsqlDataSource"
         type="HSQL">
@@ -27,11 +28,7 @@
             </bean>
         </property>
     </bean>
-	<bean id="dataStuff" class="kr.bumjin.spring.dao.DataDaoImpl">
-		<property name="dataSource">
-			<ref local="dataSource"></ref>
-		</property>
-	</bean>
+	
 	<bean id="dataSourceSpied" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName">
 			<value>${jdbc.driver}</value>
@@ -61,10 +58,17 @@
 			<value>10000</value>
 		</property>
 	--></bean>
+	<bean id="dataStuff" class="kr.bumjin.spring.dao.DataDaoImpl">
+		<property name="dataSource">
+			<ref local="dataSource"></ref>
+		</property>
+	</bean>
+	
 	<bean id="transactionManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource">
 			<ref local="dataSource" />
 		</property>
 	</bean>
+	
 </beans>
