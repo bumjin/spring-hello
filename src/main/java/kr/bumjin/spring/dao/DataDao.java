@@ -8,4 +8,6 @@ public interface DataDao {
 	public List getEmps() ;
 
 	public void create(Emp emp) ;
+
+	public Emp getEmpById(int id);
 }

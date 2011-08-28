@@ -94,7 +94,7 @@ public class DataDaoTest extends AbstractDependencyInjectionSpringContextTests {
 	}
 
 	public void testGetEmps() {
-		List<Map> names = dataDao.getEmps();
+		List<Emp> names = dataDao.getEmps();
 		assertEquals(6, names.size());
 		/*Map map = names.get(0);
 		assertEquals(1, map.get("ID"));
@@ -102,6 +102,14 @@ public class DataDaoTest extends AbstractDependencyInjectionSpringContextTests {
 		map = names.get(5);
 		assertEquals(6, map.get("ID"));
 		assertEquals("F", map.get("NAME"));*/
+	}
+	
+	public void testGetEmpOne() {
+		Emp emp = dataDao.getEmpById(1);
+		assertNotNull(emp);
+		Emp expectedEmp = new Emp(1, "A");
+		assertEquals(expectedEmp.getId(), emp.getId());
+		assertEquals(expectedEmp.getName(), emp.getName());
 	}
 
 	
