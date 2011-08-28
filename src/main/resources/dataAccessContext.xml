@@ -58,17 +58,23 @@
 			<value>10000</value>
 		</property>
 	--></bean>
+	
 	<bean id="dataStuff" class="kr.bumjin.spring.dao.DataDaoImpl">
 		<property name="dataSource">
 			<ref local="dataSource"></ref>
 		</property>
 	</bean>
-	
+	<bean id="hrService" class="kr.bumjin.spring.service.HRServiceImpl">
+		<property name="dao" ref="dataStuff" />
+		<property name="transactionTemplate" ref="transactionTemplate"></property>
+	</bean>
 	<bean id="transactionManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource">
 			<ref local="dataSource" />
 		</property>
 	</bean>
-	
+	<bean id="transactionTemplate" class="org.springframework.transaction.support.TransactionTemplate">
+		<property name="transactionManager" ref="transactionManager" />
+	</bean>
 </beans>
